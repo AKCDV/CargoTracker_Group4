@@ -3,13 +3,19 @@ The project aims to develop an IoT-based application for real-time humidity moni
 It provides instant notifications to drivers if humidity levels deviate from preset thresholds, with options for automated adjustments via HVAC systems. 
 Historical data is logged for compliance and reporting, while predictive analytics help prevent issues. Cloud integration allows fleet-wide monitoring for logistics managers.
 ------------------
-# Real-Time Humidity Monitoring : Continuous tracking of humidity levels inside the cargo area using IoT sensors.
-Customizable Humidity Thresholds: Set specific humidity ranges based on the type of cargo being transported.
-# Driver Alerts: Instant notifications via SMS, email, or mobile app if humidity levels fall outside the acceptable range.
-Automated Humidity Control: Integration with HVAC systems for automated adjustments to maintain ideal humidity levels.
-# Data Logging & Reporting: Historical data storage and reporting for traceability and compliance with industry standards.
-Predictive Analytics: Machine learning to detect patterns and predict potential issues before they arise.
-# Cloud Integration: Centralized monitoring for fleet managers to oversee multiple trucks remotely.
+-Real-Time Humidity Monitoring : Continuous tracking of humidity levels inside the cargo area using IoT sensors.
+
+-Customizable Humidity Thresholds: Set specific humidity ranges based on the type of cargo being transported.
+
+-Driver Alerts: Instant notifications via SMS, email, or mobile app if humidity levels fall outside the acceptable range.
+
+-Automated Humidity Control: Integration with HVAC systems for automated adjustments to maintain ideal humidity levels.
+
+-Data Logging & Reporting: Historical data storage and reporting for traceability and compliance with industry standards.
+
+-Predictive Analytics: Machine learning to detect patterns and predict potential issues before they arise.
+
+-Cloud Integration: Centralized monitoring for fleet managers to oversee multiple trucks remotely.
 
 ---------------------
 
