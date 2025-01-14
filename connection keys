@@ -1,0 +1,14 @@
+primary connection key 
+g9JtZPx5zFCKD8T9ofhtWMQLjmD7jBbVK+sOlAHXTuI=
+
+secondary connection key 
+
+VzDjH1pOn2tFIZmhHckwh+AfOlomqgjzSYh3btt5afM=
+
+primary connection string 
+
+HostName=cargo-humidity-iothub.azure-devices.net;DeviceId=humidity-simulator;SharedAccessKey=g9JtZPx5zFCKD8T9ofhtWMQLjmD7jBbVK+sOlAHXTuI=
+
+secondary connection key 
+
+HostName=cargo-humidity-iothub.azure-devices.net;DeviceId=humidity-simulator;SharedAccessKey=VzDjH1pOn2tFIZmhHckwh+AfOlomqgjzSYh3btt5afM=
