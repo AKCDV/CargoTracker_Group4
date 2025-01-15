@@ -1,7 +1,7 @@
 # Group4 IoT: Real-Time Humidity Monitoring for Cargo Trucks
 
 ## Project Overview
-This project ensures the safe transport of sensitive goods by developing an IoT-based application that monitors and controls humidity inside cargo trucks. It sends instant alerts to drivers if conditions exceed set limits and can automatically adjust via HVAC systems to maintain safe conditions. Historical data is logged for compliance and traceability, and predictive analytics help avoid future problems. Cloud integration allows fleet managers to monitor multiple trucks remotely.
+This project ensures the safe transport of sensitive goods by developing an IoT-based application that monitors and controls humidity inside cargo trucks. It sends instant alerts to drivers if conditions exceed set limits and can automatically adjust for the safest transportain of the cargos.
 
 ## Features
 
@@ -16,7 +16,7 @@ This project ensures the safe transport of sensitive goods by developing an IoT-
 - **Fleet Manager**: Monitor humidity levels of all trucks remotely from a centralized dashboard to ensure product safety.
 - **Logistics Coordinator**: Set specific humidity thresholds for different cargo types to maintain optimal conditions.
 - **Truck Owner**: View historical humidity data for each trip to verify proper conditions and provide proof to clients.
-- **Maintenance Technician**: Get notified of recurring humidity issues to perform preventive maintenance on HVAC systems.
+- **Maintenance Technician**: Get notified of recurring humidity issues to perform preventive maintenance.
 
 ## How to Use
 1. Install IoT sensors in the cargo area.
