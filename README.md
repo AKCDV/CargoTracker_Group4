@@ -7,8 +7,7 @@ This project ensures the safe transport of sensitive goods by developing an IoT-
 
 - **Real-Time Humidity Monitoring**: Continuous tracking of humidity levels inside the cargo area using IoT sensors.
 - **Driver Alerts**: Notifications
-- **Automated Humidity Control**: Integration with systems to maintain ideal humidity levels.
-- **Data Logging and Reporting**: Storage of historical data for compliance and traceability.
+- **Data Logging and Reporting**: Storage of historical data 
 - **Cloud Integration**: Centralized fleet monitoring for logistics managers, enabling remote access to truck data.
 
 ## User Stories
@@ -22,10 +21,10 @@ This project ensures the safe transport of sensitive goods by developing an IoT-
 ## How to Use
 1. Install IoT sensors in the cargo area.
 2. Configure the system with customized humidity thresholds.
-3. Integrate with HVAC systems for automated control.
+3. Integrate with systems for automated control.
 4. Monitor data and receive alerts through the cloud dashboard.
 
 ## Requirements
 - IoT sensors (e.g., DHT11 or equivalent)
-- Cloud platform (e.g., Microsoft Azure, AWS, or Google Cloud)
+- Cloud platform ( Azure etc.)
 - Internet connection for real-time data synchronization
