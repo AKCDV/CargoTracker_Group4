@@ -1,0 +1,163 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+      {
+        "type": "Microsoft.Web/serverfarms",
+        "apiVersion": "2021-02-01",
+        "name": "ASP-resourceGroupIotPlatform-8bc7",
+        "location": "UK South",
+        "sku": {
+          "name": "B1",
+          "tier": "Basic",
+          "capacity": 1
+        }
+      },
+      {
+        "type": "Microsoft.Web/sites",
+        "apiVersion": "2021-02-01",
+        "name": "CargoTracker",
+        "location": "UK South",
+        "properties": {
+          "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'ASP-resourceGroupIotPlatform-8bc7')]"
+        }
+      },
+      {
+        "type": "Microsoft.Devices/IotHubs",
+        "apiVersion": "2020-08-31",
+        "name": "cdv-iot-platform-hu-random-name",
+        "location": "UK South",
+        "sku": {
+          "name": "S1",
+          "tier": "Standard",
+          "capacity": 1
+        },
+        "properties": {
+          "eventHubEndpoints": {
+            "events": {
+              "retentionTimeInDays": 1,
+              "partitionCount": 2
+            }
+          },
+          "features": "None"
+        }
+      },
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts",
+        "apiVersion": "2021-06-15",
+        "name": "my-cosmos-super-db",
+        "location": "UK South",
+        "kind": "GlobalDocumentDB",
+        "properties": {
+          "databaseAccountOfferType": "Standard",
+          "locations": [
+            {
+              "locationName": "UK South",
+              "failoverPriority": 0
+            }
+          ]
+        }
+      },
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases",
+        "apiVersion": "2021-06-15",
+        "name": "my-cosmos-super-db/ProjectData",
+        "properties": {}
+      },
+      {
+        "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+        "apiVersion": "2021-06-15",
+        "name": "my-cosmos-super-db/ProjectData/ProjectData",
+        "properties": {
+          "partitionKey": {
+            "paths": ["/deviceId"],
+            "kind": "Hash"
+          }
+        }
+      },
+      {
+        "type": "Microsoft.Compute/virtualMachines",
+        "apiVersion": "2021-07-01",
+        "name": "my-vm-mqtt-docker",
+        "location": "UK South",
+        "properties": {
+          "hardwareProfile": {
+            "vmSize": "Standard_B1s"
+          },
+          "storageProfile": {
+            "imageReference": {
+              "publisher": "Canonical",
+              "offer": "UbuntuServer",
+              "sku": "18.04-LTS",
+              "version": "latest"
+            },
+            "osDisk": {
+              "createOption": "FromImage"
+            }
+          },
+          "osProfile": {
+            "computerName": "my-vm-mqtt-docker",
+            "adminUsername": "azureuser",
+            "adminPassword": "SecurePassword123!"
+          },
+          "networkProfile": {
+            "networkInterfaces": [
+              {
+                "id": "[resourceId('Microsoft.Network/networkInterfaces', 'my-vm-mqtt-docker-nic')]"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "Microsoft.Network/networkInterfaces",
+        "apiVersion": "2021-08-01",
+        "name": "my-vm-mqtt-docker-nic",
+        "location": "UK South",
+        "properties": {
+          "ipConfigurations": [
+            {
+              "name": "ipconfig1",
+              "properties": {
+                "privateIPAllocationMethod": "Dynamic",
+                "subnet": {
+                  "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'my-vm-vnet', 'default')]"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2021-08-01",
+        "name": "my-vm-vnet",
+        "location": "UK South",
+        "properties": {
+          "addressSpace": {
+            "addressPrefixes": ["10.0.0.0/16"]
+          },
+          "subnets": [
+            {
+              "name": "default",
+              "properties": {
+                "addressPrefix": "10.0.0.0/24"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2021-06-01",
+        "name": "iotstorageaccountproject",
+        "location": "UK South",
+        "sku": {
+          "name": "Standard_LRS"
+        },
+        "kind": "StorageV2",
+        "properties": {}
+      }
+    ]
+  }
+  
