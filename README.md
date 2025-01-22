@@ -41,7 +41,7 @@ As a system administrator, I want to ensure seamless integration between IoT sen
 1. Install IoT sensors in the cargo area.
 2. Configure the system with customized humidity thresholds.
 3. Integrate with systems for automated control.
-4. Monitor data and receive alerts through the cloud dashboard.
+4. Monitor data and receive alerts by text on phone
 
 ## Requirements
 - IoT sensors (e.g., DHT11 or equivalent)
